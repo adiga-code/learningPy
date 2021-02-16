@@ -1,0 +1,5 @@
+adigaman@AdigaLinux:~$ cd /home/adigaman/Документы/learningPy
+adigaman@AdigaLinux:~/Документы/learningPy$ which python3
+/usr/bin/python3
+adigaman@AdigaLinux:~/Документы/learningPy$ python3 test.py
+
