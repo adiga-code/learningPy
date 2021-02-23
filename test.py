@@ -1,57 +1,27 @@
-class Dog():
-	"""Простая модель собаки"""
-	def __init__(self , name , age):
-		self.name = name
-		self.age = age
+class User():
+	def __init__(self , first_name , last_name):
+		self.first_name = first_name
+		self.last_name = last_name
+	def describe_user(self):
+		print(f"\nUser's describe: {self.last_name.title()}"
+			f"{self.first_name.title()} not nervous people")
+	def greet_user(self):
+		print(f"User's greet: Hi, my name is {self.first_name}")
 
-	def sit(self):
-		print(f"{self.name} is now sitting. ")
+#Первый пользователь		
+user1 = User("Damir", "Hejev")
+user1.describe_user()
+user1.greet_user()
 
-	def roll_over(self):
-		print(f"{self.name} roll over! ")
+#Второй пользователь
+user2 = User('Darina', "Hejeva")
+user2.describe_user()
+user2.greet_user()
 
-"""Создаём экземпляр класса"""		
-my_dog = Dog("Dgek", 11)
-your_dog = Dog("Bobik", 3)
-"""Обращение к атрибутам"""
-print(f"My dog's name is {my_dog.name}.")
-print(f"My dog is {my_dog.age}.")
-
-print(f"\nYour dog's name is {your_dog.name}.")
-print(f"Your dog is {your_dog.age}")
-
-"""Вызов методов"""
-my_dog.sit()
-my_dog.roll_over()
-your_dog.sit()
-your_dog.roll_over()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#Третий пользователь 
+user3 = User("Disana", "Hejeva")
+user3.describe_user()
+user3.greet_user()
 
 
 

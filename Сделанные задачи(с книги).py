@@ -1357,6 +1357,105 @@ show_completed_models(completed_models)
 
 
 
+#Классы
+
+# Nom 9.1
+
+#Создать класс, метод __init__ должен содержать два атрибута, создать экземпляр
+class Restaurant():
+    def __init__(self , restaurant_name , cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+    def describe_restaurant(self):
+        print(f"Restaurant '{self.restaurant_name} is good.")
+    def open_restaurant(self):
+        print(f"Restaurant {self.restaurant_name} has {self.cuisine_type} type.")
+restaurant1 = Restaurant("In_time", "sushi")
+restaurant1.describe_restaurant()
+restaurant1.open_restaurant()
+
+# Nom 9.2
+
+#Создать ещё два экземпляра
+class Restaurant():
+    def __init__(self , restaurant_name , cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+    def describe_restaurant(self):
+        print(f"\nRestaurant '{self.restaurant_name} is good.")
+    def open_restaurant(self):
+        print(f"Restaurant {self.restaurant_name} has {self.cuisine_type} type.")
+#Первый ресторан
+restaurant1 = Restaurant("In_time", "sushi")
+restaurant1.describe_restaurant()
+restaurant1.open_restaurant()
+
+#Второй ресторан
+restaurant2 = Restaurant("Art", "shashlik")
+restaurant2.describe_restaurant()
+restaurant2.open_restaurant()
+
+#Третий ресторан
+restaurant3 = Restaurant("Best", "shaverma")
+restaurant3.describe_restaurant()
+restaurant3.open_restaurant()
+
+# Nom 9.3
+
+#Создать класс. Применить метод __init__. Создать несколько экземпляров
+class User():
+    def __init__(self , first_name , last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+    def describe_user(self):
+        print(f"\nUser's describe: {self.last_name.title()}"
+            f"{self.first_name.title()} not nervous people")
+    def greet_user(self):
+        print(f"User's greet: Hi, my name is {self.first_name}")
+
+#Первый пользователь        
+user1 = User("Damir", "Hejev")
+user1.describe_user()
+user1.greet_user()
+
+#Второй пользователь
+user2 = User('Darina', "Hejeva")
+user2.describe_user()
+user2.greet_user()
+
+#Третий пользователь 
+user3 = User("Disana", "Hejeva")
+user3.describe_user()
+user3.greet_user()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
