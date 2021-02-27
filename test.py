@@ -1,34 +1,20 @@
-class User():
-	def __init__(self , first_name , last_name):
-		self.first_name = first_name
-		self.last_name = last_name
-	def describe_user(self):
-		print(f"\nUser's describe: {self.last_name.title()}"
-			f"{self.first_name.title()} not nervous people")
-	def greet_user(self):
-		print(f"User's greet: Hi, my name is {self.first_name}")
-
-#Первый пользователь		
-user1 = User("Damir", "Hejev")
-user1.describe_user()
-user1.greet_user()
-
-#Второй пользователь
-user2 = User('Darina', "Hejeva")
-user2.describe_user()
-user2.greet_user()
-
-#Третий пользователь 
-user3 = User("Disana", "Hejeva")
-user3.describe_user()
-user3.greet_user()
-
-
-
-
-
-
-
+class Car():
+	"""Простая модель автомобиля"""
+	def __init__(self, make, model, year):
+		self.make = make			
+		self.model = model
+		self.year = year
+		self.read_odometer = 0
+	def odometr_reading(self):
+		"""Выводит пробег машины"""
+		print(f"This car has {self.read_odometer} kilometers on it")
+	def get_descriptive_name(self):
+		"""Возвращает аккуратно отформатированное описание"""
+		long_name = f"{self.year} {self.make} {self.model}"
+		return long_name
+car_bmw = Car("BMW", "M5", 2021)
+print(car_bmw.get_descriptive_name())
+car_bmw.odometr_reading()
 
 
 
