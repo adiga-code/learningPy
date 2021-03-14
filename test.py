@@ -1,35 +1,35 @@
-class Car():
-	"""Простая модель автомобиля"""
-	def __init__(self, make, model, year):
-		self.make = make			
-		self.model = model
-		self.year = year
-		self.odometr_reading = 0
-	def read_odometer(self):
-		"""Выводит пробег машины"""
-		print(f"This car has {self.odometr_reading} kilometers on it")
-	def get_descriptive_name(self):
-		"""Возвращает аккуратно отформатированное описание"""
-		long_name = f"{self.year} {self.make} {self.model}"
-		return long_name
-	def update_odometr(self, number):
-		"""Устанавливает заданное значение на одометре"""
-		"""Проверяется изменение одометра в обратную сторону"""
-		if number >= self.odometr_reading:
-			self.odometr_reading = number
-		else:
-			print("You can't roll back an odometr")
-	def increment_odometr(self, kilometers):
-		self.odometr_reading += kilometers
-car_bmw = Car("BMW", "M5", 2021)
-print(car_bmw.get_descriptive_name())
-car_bmw.read_odometer()
-#Изменение значения одометра
-car_bmw.update_odometr(33_000)
-car_bmw.read_odometer()
-#Увеличение показания одометра методом"""
-car_bmw.increment_odometr(20_000)
-car_bmw.read_odometer()
+class Restaurant():
+    def __init__(self , restaurant_name , cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+    def describe_restaurant(self):
+        print(f"Restaurant '{self.restaurant_name} is good.")
+    def open_restaurant(self):
+        print(f"Restaurant {self.restaurant_name} has {self.cuisine_type} type.")
+    def print_number_served(self):
+    	print(f"{self.number_served} people are was there")
+    """метод, позволяющий задать количество обслуженных посетителей"""
+    def set_number_served(self, served):
+    	self.number_served = served
+    """метод, приращающий значение атрибута"""
+    def increment_number_served(self, increment_served):
+    	self.number_served += increment_served
+restaurant1 = Restaurant("In_time", "sushi")
+restaurant1.describe_restaurant()
+restaurant1.open_restaurant()
+#Выводит количкество людей, бывавших в ресторане
+restaurant1.print_number_served()
+#Изменяется количество людей, побывавших в ресторане прямым изменением значения атрибута
+number_served = 10
+restaurant1.print_number_served()
+#Изменяется количество людей, побывавших в ресторане изменением значения аргумента методом
+restaurant1.set_number_served(20)
+restaurant1.print_number_served()
+#изменяется количество людей, побывавших в ресторане приращением
+restaurant1.increment_number_served(13)
+restaurant1.print_number_served()
+
 
 
 

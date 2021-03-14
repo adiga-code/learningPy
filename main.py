@@ -1,6 +1,8 @@
+import pyttsx3
 import os
 import random
 import time
+
 def listen_command():
     return input('Ваша команда: ')
 
@@ -13,7 +15,11 @@ def do_this_command(message):
         exit()
     else:
         say_message('Команда не распознана!')
+        
 def say_message(message):
+    engine = pyttsx3.init();
+    engine.say(message);
+    engine.runAndWait()
     print(f"Голосовой ассистент: {message}")
 
 if __name__ == '__main__':
