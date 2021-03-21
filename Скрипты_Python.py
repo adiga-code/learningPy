@@ -45,8 +45,7 @@ print(message)
 
 #Табуляции и разрывы строк
 
-#Табуляция с помощью "\t"
-print("Python")
+#Табуляция с помощью "\t"rint("Python")
 print("\tPython")
 
 #Разрывы строк с помощью "\n"
@@ -1235,6 +1234,9 @@ name_function(arguments)
 
 
 #кЛАССЫ. Класс Dog. Метод __init__.Создание экземпляра класса
+
+
+
 #Обращение к атрибутам
 class Dog():
     """Простая модель собаки"""
@@ -1264,6 +1266,9 @@ my_dog.roll_over()
 your_dog.sit()
 your_dog.roll_over()
 
+
+
+
 #Назначение атрибуту значения по умолчанию
 class Car():
     """Простая модель автомобиля"""
@@ -1283,7 +1288,13 @@ car_bmw = Car("BMW", "M5", 2021)
 print(car_bmw.get_descriptive_name())
 car_bmw.odometr_reading()
 
+
+
+
 #Изменение значений атрибута
+
+
+
 
 #Прямое изменение значения атрибута
 class Car():
@@ -1306,6 +1317,9 @@ car_bmw.read_odometer()
 #Прямое изменение значения атрибута
 car_bmw.odometr_reading = 23
 car_bmw.read_odometer()
+
+
+
 
 #Изменение значения атрибута с использованием метода(функции)
 class Car():
@@ -1338,6 +1352,9 @@ car_bmw.read_odometer()
 #Повторное изменения значения для проверки на изменение его значения"""
 car_bmw.update_odometr(10_000)
 car_bmw.read_odometer()
+
+
+
 
 #Изменение значения атрибута с приращением
 class Car():
@@ -1372,6 +1389,118 @@ car_bmw.read_odometer()
 #Увеличение показания одометра методом"""
 car_bmw.increment_odometr(20_000)
 car_bmw.read_odometer()
+
+#Наследование
+
+
+
+#Метод __init__ класса потомка, вызов метода родительского класса методом super()
+class Car():
+    """Простая модель автомобиля"""
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometr_reading = 0
+    def get_descriptive_name(self):
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    def read_odometr(self):
+        print(f"This car has {self.odometr_reading} kilometrs on it")
+    def update_odometr(self, kilometrs):
+        if kilometrs >= self.odometr_reading:
+            self.odometr_reading = kilometrs
+        else:
+            print("You can't roll back an odometr!!!")
+    def increment_odometr(self, kilometr):
+        self.odometr_reading += kilometr
+class ElectricCar(Car):
+    """Представляет аспекты машин, специфические для электрокаров"""
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+print(my_tesla.get_descriptive_name())
+
+
+
+
+#Определение атрибутов методов класса-потомка
+class Car():
+    """Простая модель автомобиля"""
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometr_reading = 0
+    def get_descriptive_name(self):
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    def read_odometr(self):
+        print(f"This car has {self.odometr_reading} kilometrs on it")
+    def update_odometr(self, kilometrs):
+        if kilometrs >= self.odometr_reading:
+            self.odometr_reading = kilometrs
+        else:
+            print("You can't roll back an odometr!!!")
+    def increment_odometr(self, kilometr):
+        self.odometr_reading += kilometr
+class ElectricCar(Car):
+    """Представляет аспекты машин, специфические для электрокаров"""
+    def __init__(self, make, model, year):
+        """
+        Инициализирует атрибуты класса-родителя
+        Затем инициализирует атрибуты, специфические для электромобиля
+        """
+        super().__init__(make, model, year)
+        self.battery_size = 75
+    def describe_battery(self):
+        """Выводит сообщение о мощности аккумулятора"""
+        print(f"This car has {self.battery_size}-kWh battery.")
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
+
+
+
+#Переопределение методов класса-родителя
+class Car():
+    """Простая модель автомобиля"""
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometr_reading = 0
+    def get_descriptive_name(self):
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    def read_odometr(self):
+        print(f"This car has {self.odometr_reading} kilometrs on it")
+    def update_odometr(self, kilometrs):
+        if kilometrs >= self.odometr_reading:
+            self.odometr_reading = kilometrs
+        else:
+            print("You can't roll back an odometr!!!")
+    def increment_odometr(self, kilometr):
+        self.odometr_reading += kilometr
+class ElectricCar(Car):
+    """Представляет аспекты машин, специфические для электрокаров"""
+    def __init__(self, make, model, year):
+        """
+        Инициализирует атрибуты класса-родителя
+        Затем инициализирует атрибуты, специфические для электромобиля
+        """
+        super().__init__(make, model, year)
+        self.battery_size = 75
+    def describe_battery(self):
+        """Выводит сообщение о мощности аккумулятора"""
+        print(f"This car has {self.battery_size}-kWh battery.")
+    def fill_gas_tank(self):
+        """У электромобилей нет бензобака"""
+        print("This car don't need a gas tank!")
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
+        
 
 
 

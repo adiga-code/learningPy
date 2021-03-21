@@ -1361,7 +1361,7 @@ show_completed_models(completed_models)
 
 # Nom 9.1
 
-#Создать класс, метод __init__ должен содержать два атрибута, создать экземпляр
+#1)Создать класс, метод __init__ должен содержать два атрибута, создать экземпляр
 class Restaurant():
     def __init__(self , restaurant_name , cuisine_type):
         self.restaurant_name = restaurant_name
@@ -1376,7 +1376,7 @@ restaurant1.open_restaurant()
 
 # Nom 9.2
 
-#Создать ещё два экземпляра
+#1)Создать ещё два экземпляра
 class Restaurant():
     def __init__(self , restaurant_name , cuisine_type):
         self.restaurant_name = restaurant_name
@@ -1402,7 +1402,7 @@ restaurant3.open_restaurant()
 
 # Nom 9.3
 
-#Создать класс. Применить метод __init__. Создать несколько экземпляров
+#1)Создать класс. Применить метод __init__. Создать несколько экземпляров
 class User():
     def __init__(self , first_name , last_name):
         self.first_name = first_name
@@ -1427,6 +1427,74 @@ user2.greet_user()
 user3 = User("Disana", "Hejeva")
 user3.describe_user()
 user3.greet_user()
+
+# Nom 9.4
+
+#1)начать из упражнения 9.1. Добавить атрибут со значением по умолчанию, изменить 3-мя способами 
+class Restaurant():
+    def __init__(self , restaurant_name , cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+    def describe_restaurant(self):
+        print(f"Restaurant '{self.restaurant_name} is good.")
+    def open_restaurant(self):
+        print(f"Restaurant {self.restaurant_name} has {self.cuisine_type} type.")
+    def print_number_served(self):
+        print(f"{self.number_served} people are was there")
+    """метод, позволяющий задать количество обслуженных посетителей"""
+    def set_number_served(self, served):
+        self.number_served = served
+    """метод, приращающий значение атрибута"""
+    def increment_number_served(self, increment_served):
+        self.number_served += increment_served
+restaurant1 = Restaurant("In_time", "sushi")
+restaurant1.describe_restaurant()
+restaurant1.open_restaurant()
+#Выводит количкество людей, бывавших в ресторане
+restaurant1.print_number_served()
+#Изменяется количество людей, побывавших в ресторане прямым изменением значения атрибута
+number_served = 10
+restaurant1.print_number_served()
+#Изменяется количество людей, побывавших в ресторане изменением значения аргумента методом
+restaurant1.set_number_served(20)
+restaurant1.print_number_served()
+#изменяется количество людей, побывавших в ресторане приращением
+restaurant1.increment_number_served(13)
+restaurant1.print_number_served()
+
+# Nom 9.5
+
+#1)Из номера 9.3 создаются 2 метода, которые прибавляют и обнуляют атрибут
+class User():
+    def __init__(self , first_name , last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.login_attempts = 0
+    def describe_user(self):
+        print(f"\nUser's describe: {self.last_name.title()}"
+            f"{self.first_name.title()} not nervous people")
+    def greet_user(self):
+        print(f"User's greet: Hi, my name is {self.first_name}")
+
+    def read_login_attempts(self):
+        print(f"Login attempts: {self.login_attempts}")
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+user1 = User("Damir", "Hejev")
+user1.describe_user()
+user1.greet_user()
+#Изменение атрибута login_attempts
+user1.read_login_attempts()
+user1.increment_login_attempts()
+user1.read_login_attempts()
+user1.reset_login_attempts()
+user1.read_login_attempts()
+
+
+
 
 
 

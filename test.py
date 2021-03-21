@@ -1,35 +1,42 @@
-class Restaurant():
-    def __init__(self , restaurant_name , cuisine_type):
-        self.restaurant_name = restaurant_name
-        self.cuisine_type = cuisine_type
-        self.number_served = 0
-    def describe_restaurant(self):
-        print(f"Restaurant '{self.restaurant_name} is good.")
-    def open_restaurant(self):
-        print(f"Restaurant {self.restaurant_name} has {self.cuisine_type} type.")
-    def print_number_served(self):
-    	print(f"{self.number_served} people are was there")
-    """метод, позволяющий задать количество обслуженных посетителей"""
-    def set_number_served(self, served):
-    	self.number_served = served
-    """метод, приращающий значение атрибута"""
-    def increment_number_served(self, increment_served):
-    	self.number_served += increment_served
-restaurant1 = Restaurant("In_time", "sushi")
-restaurant1.describe_restaurant()
-restaurant1.open_restaurant()
-#Выводит количкество людей, бывавших в ресторане
-restaurant1.print_number_served()
-#Изменяется количество людей, побывавших в ресторане прямым изменением значения атрибута
-number_served = 10
-restaurant1.print_number_served()
-#Изменяется количество людей, побывавших в ресторане изменением значения аргумента методом
-restaurant1.set_number_served(20)
-restaurant1.print_number_served()
-#изменяется количество людей, побывавших в ресторане приращением
-restaurant1.increment_number_served(13)
-restaurant1.print_number_served()
-
+class Car():
+	"""Простая модель автомобиля"""
+	def __init__(self, make, model, year):
+		self.make = make
+		self.model = model
+		self.year = year
+		self.odometr_reading = 0
+	def get_descriptive_name(self):
+		long_name = f"{self.year} {self.make} {self.model}"
+		return long_name.title()
+	def read_odometr(self):
+		print(f"This car has {self.odometr_reading} kilometrs on it")
+	def update_odometr(self, kilometrs):
+		if kilometrs >= self.odometr_reading:
+			self.odometr_reading = kilometrs
+		else:
+			print("You can't roll back an odometr!!!")
+	def increment_odometr(self, kilometr):
+		self.odometr_reading += kilometr
+class ElectricCar(Car):
+	"""Представляет аспекты машин, специфические для электрокаров"""
+	def __init__(self, make, model, year):
+		"""
+        Инициализирует атрибуты класса-родителя
+        Затем инициализирует атрибуты, специфические для электромобиля
+        """
+		super().__init__(make, model, year)
+		self.battery_size = 75
+	def describe_battery(self):
+		"""Выводит сообщение о мощности аккумулятора"""
+		print(f"This car has {self.battery_size}-kWh battery.")
+	def fill_gas_tank(self):
+		"""У электромобилей нет бензобака"""
+		print("This car don't need a gas tank!")
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
+		
+    	
 
 
 
