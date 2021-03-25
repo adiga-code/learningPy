@@ -1497,6 +1497,63 @@ user1.read_login_attempts()
 
 
 
+#Наследование классов
+
+
+
+# Nom 9.6
+
+#1)В упражнении 9.1 добавить класс-потомок классу Restaurant, добавить атрибут, создать экземпляр
+class Restaurant():
+    def __init__(self , restaurant_name , cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+    def describe_restaurant(self):
+        print(f"Restaurant '{self.restaurant_name} is good.")
+    def open_restaurant(self):
+        print(f"Restaurant {self.restaurant_name} has {self.cuisine_type} type.")
+#класс-потомок класса Restaurant
+class IceCreamStand(Restaurant):
+    def __init__(self, restaurant_name, cuisine_type):
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = ['chocolate', 'vanila', 'fistashki']
+    def describe_flavors(self):
+        print(f"\nWe have this flavors:")
+        for flavor in self.flavors:
+            print(flavor) 
+
+restaurant1 = IceCreamStand('Ice creams', 'kafe ice cream')
+print(restaurant1.open_restaurant())
+restaurant1.describe_flavors()
+
+
+
+# Nom 9.8
+
+#1)С упражнением 9.3 сделать то же, что и с 9.1 в упражнении 9.6
+class User():
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+    def describe_user(self):
+        print(f"\nUser's describe: {self.last_name.title()}"
+            f"{self.first_name.title()} not nervous people")
+    def greet_user(self):
+        print(f"User's greet: Hi, my name is {self.first_name}")
+#Создаётся класс-потомок классу User
+class Admin(User):
+    def __init__(self, first_name, last_name):
+        super().__init__(first_name, last_name)
+        self.privilegs = ['разрешено добавлять сообщения',
+                          'разрешено удалять пользователей',
+                          'разрешено банить пользователей']
+    def show_privilegs(self):
+        print('\nВозможности админов:')
+        for privileg in self.privilegs:
+            print(f'\t{privileg}')
+admin1 = Admin('Дамир', 'Хежев')
+admin1.greet_user()
+admin1.show_privilegs()
 
 
 
