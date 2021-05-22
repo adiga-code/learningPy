@@ -1922,3 +1922,23 @@ print(my_bmw.get_descriptive_name())
 
 my_tesla = EC('tesla', 'model s', 2019)
 print(my_tesla.get_descriptive_name())
+
+
+
+
+
+
+#Стандартная библиотека Python
+
+#Модуль random
+#Функция randint()
+>>> from random import randint
+>>> randint(1,6)
+2
+
+#Функция choice()
+>>> from random import choice
+>>> players = ['p1', 'p2', 'p3', 'p4']
+>>> first_up = choice(players)
+>>> first_up
+'p3'

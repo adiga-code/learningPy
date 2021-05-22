@@ -1627,7 +1627,35 @@ my_tesla.battery.get_range()
 
 
 
+# Nom 9.13
+#1)Написать класс, создать кубики с разным кол-вом граней, смоделировать 10 бросков каждого куба
+from random import randint
+class Die():
+    def __init__(self, sides=6):
+        self.sides = sides
+    def roll_die(self):
+        number = randint(1, self.sides)
+        print(number)
 
+cube = Die()
+x = 1
+while x<=10:
+    cube.roll_die()
+    x+=1
+
+print('\t\n10-гранный куб')
+cube.sides = 10
+x=1
+while x<=10:
+    cube.roll_die()
+    x+=1
+
+print('\t\n20-гранный куб')
+cube.sides = 20
+x=1
+while x<=10:
+    cube.roll_die()
+    x+=1
 
 
 
