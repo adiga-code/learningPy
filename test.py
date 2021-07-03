@@ -1,53 +1,25 @@
-from random import choice
-print('Здравствуйте, выберите лотерейный билет')
-symbols = [1, 2, 4, 3, 6, 7, 5, 9, 8, 0, 'a', 't', 'g', 'h', 'q']
-rand_symb1 = choice(symbols)
-rand_symb2 = choice(symbols)
-rand_symb3 = choice(symbols)
-rand_symb4 = choice(symbols)
-rand_ch = f'{rand_symb1}_{rand_symb2}_{rand_symb3}_{rand_symb4}'
-print(f'\nБилет {rand_ch} выигрышный')
+print('Первый способ: Без чтения линий. Самый простой способ')
+with open('learning_python.txt') as file_object:
+    for line in file_object:
+        print(line)
 
-my_ticket = [1, 2, 4, 3, 6, 7, 5, 9, 8, 0, 'a', 't', 'g', 'h', 'q']
-def rand_choise():
-    rand_symb11 = choice(symbols)
-    rand_symb22 = choice(symbols)
-    rand_symb33 = choice(symbols)
-    rand_symb44 = choice(symbols)
-    rand_ch1 = f'{rand_symb11}_{rand_symb22}_{rand_symb33}_{rand_symb44}'
-    return rand_ch1
-print(rand_choise)
-if rand_ch1==rand_ch:
-    print('Поздравляем, вы выиграли')
-else:
-    print(rand_choise)
-    
+print('Второй способ: С чтением всего файла сразу, не зацикливаясь на линиях')
+with open('learning_python.txt') as file_object:
+    contents = file_object.read()
+print(contents)
 
+print('Третий способ: Все линии файла читаются и перемещаются в переменную, выводятся')
+with open('learning_python.txt') as file_object:
+    lines = file_object.readlines()
+pi_string = ''
+for line in lines:
+    pi_string += line
+print(pi_string)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print('Четвертый способ: Все линии читаются и перемещаются в список, список выводится')
+with open('learning_python.txt') as file_object:
+    lines = file_object.readlines()
+content = []
+for line in lines:
+    content.append(line)
+print(content)

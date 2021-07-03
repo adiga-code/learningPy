@@ -1942,3 +1942,45 @@ print(my_tesla.get_descriptive_name())
 >>> first_up = choice(players)
 >>> first_up
 'p3'
+
+
+
+
+
+
+
+
+
+
+
+#Файлы и исключения
+
+
+
+
+#Чтение из файла
+#УСЛОВИЕ: Файлы находятся в одном каталоге
+
+#Содержимое файла pi_digits.txt
+3.
+1415926535
+8979323846
+2643383279
+#Программа для вывода содержимого
+with open('pi_digits.txt') as file_object:
+    contents = file_object.read()
+    print(contents.rstrip())
+
+
+#Пути к файлам
+
+#Относительные
+#УСЛОВИЕ: Файл должен находиться в каталоге, который находится в катлоге программы
+
+with open('подкаталог_с_файлом/имя_файла.txt') as file_object:
+
+#Абсолютные
+#УСЛОВИЕ: Файл может находиться в любом мсте файловой системы, но нужно указать точное местонахождение
+
+file_path = '/home/adigaman/Документы/learningPy/Other/имя_файла.txt'
+with open(file_path) as file_object:
